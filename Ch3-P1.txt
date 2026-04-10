@@ -1,0 +1,29 @@
+//  Chapter 3, Program 1
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    
+    double x = 6.384938274803;
+    double y = 6.384938274803;
+    int sigFigs;
+    
+    cout << "With a number like X = " << x << endl
+        << "we can set the precision\n" 
+        << "since it's so big,"
+        << " to something much more manageable.\n\n";
+    cout << "How many sig figs should X have? ";
+    cin >> sigFigs;
+    
+    cout << setprecision(sigFigs) << x << endl << endl;
+    
+    cout << "We can even have it in scientific notation.";
+    cout << scientific << "\n\n";
+    cout << x;
+    
+    
+    return 0;
+}
