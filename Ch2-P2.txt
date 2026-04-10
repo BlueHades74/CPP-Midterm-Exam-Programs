@@ -1,0 +1,28 @@
+//  Chapter 2, Program 2
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    
+    string name;
+    int currentAge;
+    int newAge;
+    int currentYear = 2026;
+    int newYear;
+    
+    cout << "Please tell me your name and your age: ";
+    cin >> name >> currentAge;
+    
+    cout << "Nice to meet you " << name << "!\n\n"
+        << "Please enter a year to figure out hold you will be: ";
+    cin >> newYear;
+    
+    newAge = newYear - currentYear + currentAge;
+    
+    cout << "You will be " << newAge << " years old!";
+    
+    return 0;
+}

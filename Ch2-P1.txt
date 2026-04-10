@@ -1,0 +1,26 @@
+//  Chapter 2, Program 1
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    double x = 7.298, y = 99.3, z = 2.54;
+    
+    cout << "As doubles, our numbers are:\n";
+    cout << "X = " << x << endl
+        << "Y = " << y << endl
+        << "Z = " << z << endl << endl;
+        
+    x = static_cast<int>(x);
+    y = static_cast<int>(y);
+    z = static_cast<int>(z);
+    
+    cout << "After a type cast to ints, they are:\n";
+    cout << "X = " << x << endl
+        << "Y = " << y << endl
+        << "Z = " << z << endl;
+    
+    return 0;
+}
