@@ -1,0 +1,44 @@
+//  Chapter 3, Program 2
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main() {
+    
+    string name1;
+    string name2;
+    int width;
+    char fillChar;
+    
+    cout << "Please enter your name and the name of a friend: ";
+    cin >> name1 >> name2;
+    
+    cout << "Hello, " << name1 << "! There are some cool things we can do.\n\n"
+        << "Enter a number 10-30: ";
+    cin >> width;
+    
+    cout << setw(width) << name1 << setw(width) << name2 << endl
+        << "We can set the starting distance.\n\n"
+        << "Enter a character: ";
+    cin >> fillChar;
+    
+    cout << setfill(fillChar);
+    cout << setw(width) << name1 
+        << setw(width) << name2 << endl;
+    cout << "We even have the ability to fill in the gaps we made!\n"
+        << "Neat, huh?\n\n";
+        
+    cout << "There is one more trick I have up my sleeve.\n"
+        << "If we wanted, we could set the characters to show second.\n\n";
+        
+    cout << left;
+    cout << setw(width) << name1 
+        << setw(width) << name2 << endl;
+    
+    
+    
+    return 0;
+}
