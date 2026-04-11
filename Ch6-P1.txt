@@ -1,0 +1,53 @@
+//  Chapter 6, Program 1
+
+#include <iostream>
+
+using namespace std;
+
+double multiply(double x, double y){
+    return x * y;
+}
+
+char quizGrade(int score){
+    switch(score){
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            return 'F';
+        case 6:
+            return 'D';
+        case 7:
+            return 'C';
+        case 8:
+            return 'B';
+        case 9:
+        case 10:
+            return 'A';
+    }
+    // just to avoid error
+    return 'S';
+}
+
+int main() {
+    
+    double x, y, z, score;
+    char grade;
+    
+    cout << "Enter two numbers to multiply: ";
+    cin >> x >> y;
+    
+    z = multiply(x, y);
+    cout << "The value is " << z << endl << endl;
+    
+    cout << "Enter the score (1-10) you got for your quiz: ";
+    cin >> score;
+    
+    grade = quizGrade(score);
+    
+    cout << "Your grade is " << grade;
+    
+    return 0;
+}
