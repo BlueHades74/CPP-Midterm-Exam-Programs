@@ -1,0 +1,3 @@
+// I'm thinking do something with passing by reference
+// Maybe something with function overload
+// Also, maybe global variable
