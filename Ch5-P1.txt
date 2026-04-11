@@ -1,0 +1,56 @@
+//  Chapter 5, Program 1
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    int num = 0;
+    
+    // do while to ensure correct input
+    do 
+    {
+        // determines width of diamond
+        cout << "Enter a number greater than zero: ";
+        cin >> num;
+    } while (num <= 0);
+    
+    // top half
+    for (int i = 0; i < num; i++)
+    {
+        // enter spaces before first *
+        for (int j = (i + 1); j < num; j++)
+        {
+            cout << " ";
+        }
+        
+        // enter stars
+        for (int k = 0; k <= i; k++)
+        {
+            cout << "* ";
+        }
+        
+        cout << endl;
+    }
+    
+    // bottom half
+    for (int i = num; i > 0; i--)
+    {
+        // reversed enter spaces
+        for (int j = (num - i + 1); j > 0; j--)
+        {
+            cout << " ";
+        }
+        
+        // reversed enter stars
+        for (int k = (i - 2); k >= 0; k--)
+        {
+            cout << "* ";
+        }
+        
+        cout << endl;
+    }
+    
+    return 0;
+}
