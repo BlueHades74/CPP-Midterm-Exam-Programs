@@ -1,0 +1,21 @@
+//  Chapter 4, Program 2
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    
+    string word1, word2, word3, highest;
+    
+    cout << "Enter three words to determine which has the highest ASCII value: ";
+    cin >> word1 >> word2 >> word3;
+    
+    highest = (word1 > word2) ? ((word1 > word3) ? word1 : word3) :
+  				((word2 > word3) ? word2 : word3);
+  				
+  	cout << "\nThe word with the highest ASCII value is " << highest;
+    
+    return 0;
+}
