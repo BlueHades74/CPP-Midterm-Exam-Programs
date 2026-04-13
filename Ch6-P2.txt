@@ -1,3 +1,45 @@
-// I'm thinking do something with passing by reference
-// Maybe something with function overload
-// Also, maybe global variable
+//  Chapter 6, Program 2
+
+#include <iostream>
+
+using namespace std;
+
+int createRandNum(){
+    return rand() % 100 + 1;
+}
+
+int createRandNum(int num){
+    return rand() % num + 1;
+}
+
+void swapNums(int &x, int &y) {
+    int z = x;
+    x = y;
+    y = z;
+}
+
+int main() {
+    
+    int x, y, z, num;
+    
+    cout << "Enter two numbers: ";
+    cin >> x >> y;
+    
+    cout << "X: " << x << " Y: " << y << endl;
+    
+    swapNums(x, y);
+    
+    cout << "\nX: " << x << " Y: " << y << endl << endl;
+    
+    z = createRandNum();
+    
+    cout << "This is a random number (0-100) Z: " << z << endl << endl;
+    cout << "Enter a max value for the random number: ";
+    cin >> num;
+    
+    z = createRandNum(num);
+    
+    cout << "\nHere is the new value Z: " << z;
+    
+    return 0;
+}

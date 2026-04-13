@@ -1,0 +1,35 @@
+//  Chapter 7, Program 2
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+typedef string Word;
+
+Word grabFirstName(Word fullName){
+    Word firstName;
+    for (int i = 0; i < fullName.length(); i++){
+        if (fullName[i] == ' ') {
+            break;
+        }
+        
+        firstName.append(1, fullName[i]);
+    }
+    return firstName;
+}
+
+int main() {
+    
+    Word fullName, firstName;
+    
+    cout << "Please enter your first and last name: ";
+    getline(cin, fullName);
+    
+    firstName = grabFirstName(fullName);
+    
+    cout << firstName;
+    
+    
+    return 0;
+}

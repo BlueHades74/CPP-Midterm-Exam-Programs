@@ -1,0 +1,38 @@
+//  Chapter 7, Program 1
+
+#include <iostream>
+
+using namespace std;
+
+enum day {Sunday = 1, Monday, Tuesday, Wednesday = 9, Thursday, Friday, Saturday};
+
+int main() {
+    
+    day today = Thursday;
+    
+    switch (today){
+        case Sunday:
+            cout << "Today is Sunday. Day " << today;
+            break;
+        case Monday:
+            cout << "Today is Monday. Day " << today;
+            break;
+        case Tuesday:
+            cout << "Today is Tuesday. Day " << today;
+            break;
+        case Wednesday:
+            cout << "Today is Wednesday. Day " << today;
+            break;
+        case Thursday:
+            cout << "Today is Thursday. Day " << today;
+            break;
+        case Friday:
+            cout << "Today is Friday. Day " << today;
+            break;
+        case Saturday:
+            cout << "Today is Saturday. Day " << today;
+            break;
+    }
+    
+    return 0;
+}
