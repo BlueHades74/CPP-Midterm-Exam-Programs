@@ -1,0 +1,35 @@
+//  Chapter 10, Program 2
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class demon{
+   
+    public:
+        void badThought(){
+            cout << "Jump out the window. It'll look awesome.\n";
+        }
+};
+
+class angel{
+    public:
+        void goodThought(){
+            cout << "Just take the stairs. Why risk the injury?\n";
+        }
+};
+
+class person: public demon, public angel{
+    
+};
+
+int main() {
+    
+    person person1;
+    
+    person1.badThought();
+    person1.goodThought();
+    
+    return 0;
+}

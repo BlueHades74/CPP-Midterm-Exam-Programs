@@ -1,0 +1,58 @@
+//  Chapter 10, Program 2
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class demon{
+    string name;
+    int age;
+    
+    public:
+        demon(){
+            cout << "RELEASE ME AT ONCE!!!\n";
+            age = rand() % 1000 + 1;
+        }
+        demon(string givenName){
+            cout << "Hello, my name is " << name
+                << ". RELEASE ME AT ONCE!!!\n";
+            name = givenName;
+        }
+        demon(int givenAge){
+            cout << "I have lived for " << age << " years.\n";
+            age = givenAge;
+        }
+        ~demon(){
+            cout << "NO! YOU CANNOT KEEP ME HERE\n";
+        }
+        
+        void releaseDemon(){
+            cout << "HAHAHAHAHA >:D, FREE AT LAST!\n";
+        }
+        
+        int getAge(){
+            cout << "I have lived for " << age << " years.\n";
+            return age;
+        }
+        
+        void printName(){
+            cout << "\n\n" << name;
+        }
+};
+
+int main() {
+    
+    demon demons[10];
+    
+    for (int i = 0; i < 10; i++){
+        if (demons[i].getAge() > 700){
+            cout << "Demon is too old. Releasing...\n\n";
+            demons[i].releaseDemon();
+            demons[i] = NULL;
+        }
+    }
+    
+    
+    return 0;
+}

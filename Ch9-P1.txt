@@ -1,0 +1,32 @@
+//  Chapter 9, Program 1
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct student{
+    string firstName;
+    string lastName;
+    string favClass;
+    char gradeInFavClass;
+};
+
+int main() {
+    student student1;
+    
+    cout << "Enter your first and last name: ";
+    cin >> student1.firstName >> student1.lastName;
+    
+    cout << "\nEnter the name of your favorite class: ";
+    cin >> student1.favClass;
+    
+    cout << "\nEnter the grade you have in that class: ";
+    cin >> student1.gradeInFavClass;
+    
+    cout << "\nHello, " << student1.firstName << " " << student1.lastName
+        << "! You have a " << student1.gradeInFavClass
+        << " in your favorite class, " << student1.favClass << ".";
+    
+    return 0;
+}

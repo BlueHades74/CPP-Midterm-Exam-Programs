@@ -1,0 +1,45 @@
+//  Chapter 11, Program 2
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class demon{
+   
+    public:
+    
+        void badThought(){
+            cout << "Demon: Jump out the window. It'll look awesome.\n";
+        }
+};
+
+class angel{
+    public:
+    
+        void goodThought(){
+            cout << "Angel: Just take the stairs. Why risk the injury?\n";
+        }
+};
+
+class person{
+    
+    
+    public:
+        demon rightShoulder;
+        angel leftShoulder;
+    
+        person(){
+            cout << "What way should I take to the bottom floor?\n";
+        }
+};
+
+int main() {
+    
+    person person1;
+    
+    person1.rightShoulder.badThought();
+    person1.leftShoulder.goodThought();
+    
+    return 0;
+}
