@@ -1,0 +1,17 @@
+//  Chapter 12, Program 1
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    int x = 10;
+    int *pX = &x;
+    
+    cout << "X: " << x << endl;
+    cout << "Pointer to X: " << pX << endl;
+    cout << "Value at address of pointer: " << *pX << endl << endl;
+    
+    return 0;
+}

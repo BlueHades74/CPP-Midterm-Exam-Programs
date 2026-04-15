@@ -1,0 +1,35 @@
+//  Chapter 12, Program 2
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    int arr[20];
+    
+    for (int i = 0; i < 20; i++){
+        arr[i] = rand() % 1000 + 1;
+        cout << arr[i] << " ";
+    }
+    
+    cout << "\n\n";
+    
+    for (int i = 0; i < 20; i++){
+        for (int j = i; j < 20; j++){
+            if (arr[j] < arr[i]){
+                int *p = new int;
+                *p = arr[i];
+                arr[i] = arr[j];
+                arr[j] = *p;
+                delete p;
+            }
+        }
+    }
+    
+    for (int i = 0; i < 20; i++){
+        cout << arr[i] << " ";
+    }
+    
+    return 0;
+}
