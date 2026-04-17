@@ -1,0 +1,89 @@
+// Basic Movement System
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string Game(){
+    string input;
+    
+    cout << "Please enter a direction (north, south, east, west) to move or EXIT to end: ";
+    cin >> input;
+    
+    return input;
+}
+
+int main() {
+    string safeWord;
+    
+    int arr[4][4] = {{1}};
+    int x = 0, y = 0;
+    bool foundIndex = false;
+    int safeWordInt;
+    
+	while (safeWord != "EXIT") {
+        safeWord = Game();
+        
+        if (safeWord == "north"){
+            safeWordInt = 0;
+        }
+        else if (safeWord == "south"){
+            safeWordInt = 1;
+        }
+        else if (safeWord == "west"){
+            safeWordInt = 2;
+        }
+        else if (safeWord == "east"){
+            safeWordInt = 3;
+        }
+        
+        switch (safeWordInt){
+            case 0:
+                if (x == 0) {
+                    continue;
+                }
+                else
+                {
+                    arr[x][y] = 0;
+                    x -= 1;
+                    arr[x][y] = 1;
+                    break;
+                }
+            case 1:
+                if (x == 3) {
+                    continue;
+                }
+                else
+                {
+                    arr[x][y] = 0;
+                    x += 1;
+                    arr[x][y] = 1;
+                    break;
+                }
+            case 2:
+                if (y == 0){
+                    continue;
+                }
+                else
+                {
+                    arr[x][y] = 0;
+                    y -= 1;
+                    arr[x][y] = 1;
+                    break;
+                }
+            case 3:
+                if (y == 3){
+                    continue;
+                }
+                else
+                {
+                    arr[x][y] = 0;
+                    y += 1;
+                    arr[x][y] = 1;
+                    break;
+                }
+        }
+        cout << "Coordinates: " << x << ", " << y << endl;
+	}
+	return 0;
+}
