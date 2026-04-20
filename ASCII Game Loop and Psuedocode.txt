@@ -1,0 +1,53 @@
+The game begins by initializing a map shown with ASCII characters, where the player is displayed as @, walls as #, and enemies as E. Only the current room is shown to the player and where doors are. Rooms are randomized each run, and the player is given a starting amount of health.
+The game enters a loop, and goes through these steps:
+The current room state is shown on screen.
+The player gives a command, typically a movement direction (up, down, left, or right).
+The game processes the player’s action:
+If the player moves into an empty space, their position updates.
+If the player moves into an enemy, combat occurs and the enemy takes damage.
+If the player attempts to move into a wall, the move is blocked.
+After the player’s turn, enemies take their turn:
+Enemies attack the player if they are adjacent.
+The game updates all relevant values, including health and removing defeated enemies.
+The game checks for end conditions:
+If the player’s health reaches zero, the player loses.
+If the player gets back to floor 1 with the special item then the player wins.
+If no end condition is met, repeat
+
+
+START GAME
+// Initialize variables
+playerHP = 10
+gameRunning = true
+Create map
+Place player on map
+Place enemies on map
+WHILE gameRunning:
+Display map
+Display playerHP
+// Get input
+INPUT direction
+// Determine new position
+newX, newY = calculate position based on input
+// Handle movement or combat
+IF tile at (newX, newY) is empty:
+move player to new position
+ELSE IF tile has enemy:
+reduce enemy HP
+ELSE IF tile is wall:
+do nothing
+// Enemy turn
+FOR each enemy:
+IF enemy is adjacent to player:
+reduce playerHP
+// Remove defeated enemies
+delete enemies with HP <= 0
+// Check lose condition
+IF playerHP <= 0:
+PRINT "Game Over"
+gameRunning = false
+// Check win condition
+IF player has special item AND attempts to exit floor 1:
+player wins
+gameRunning = false
+END WHILE.
